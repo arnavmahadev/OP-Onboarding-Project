@@ -24,14 +24,14 @@ app.post('/inventory', (req, res) => {
         id: inventory.length + 1,
         name: req.body.name,
         category: req.body.category,
-        quantity: req.body.quantity,
+        quantity: Number(req.body.quantity),
         status: req.body.status
     };
     inventory.push(newItem);
     res.json({ message: "item added successfully" });
 });
 
-const PORT = 3001;
+const PORT = 3002;
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
 });
