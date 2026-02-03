@@ -31,7 +31,7 @@ app.post('/inventory', (req, res) => {
     res.json({ message: "item added successfully" });
 });
 
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
+  console.log("Server running on port", PORT);
 });
