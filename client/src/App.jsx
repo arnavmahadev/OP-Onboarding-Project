@@ -10,7 +10,7 @@ export default function App() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:3002/inventory', {
+    fetch('https://op-onboarding-project.onrender.com/inventory', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -20,7 +20,7 @@ export default function App() {
         status,
       }),
     }).then(() => {
-      fetch('http://localhost:3002/inventory')
+      fetch('https://op-onboarding-project.onrender.com/inventory')
         .then((res) => res.json())
         .then((data) => setInventory(data));
     });
@@ -32,7 +32,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3002/inventory')
+    fetch('https://op-onboarding-project.onrender.com/inventory')
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
